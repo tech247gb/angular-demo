@@ -1,0 +1,57 @@
+<div style="width: 100%;">
+  <div class="add-title">
+    <h2 class="primary">{{title}}</h2>
+  </div>
+  <div>
+    <form [formGroup]="addEmployeesForm">
+      <mat-grid-list cols="2" [cols]="breakpoint" rowHeight="85px">
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name" required>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email address"  formControlName="email" required>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-radio-group class="gender">
+              <div style="color:grey;">Gender</div>
+              <mat-radio-group formControlName="gender" class="m-l-5">
+                <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="male">Male</mat-radio-button>
+                <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="female">Female
+                </mat-radio-button>
+              </mat-radio-group>
+            </mat-radio-group>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-radio-group class="gender">
+              <div style="color:grey;">Status</div>
+              <mat-select formControlName="status">
+                <mat-option value="active"> Active </mat-option>
+                <mat-option value="inactive">Inactive</mat-option>
+              </mat-select>
+            </mat-radio-group>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="btn-sec">
+        <button mat-raised-button type="submit" color="primary" class="Update-btn"
+          (click)="addEmployee(data)">{{title==='Add Employee'?'ADD':'EDIT'}}</button>
+        <button mat-raised-button type="button" class="Discard-btn" (click)="closeDialog()">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

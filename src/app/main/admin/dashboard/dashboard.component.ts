@@ -14,7 +14,7 @@ import { AddEmployeesDialogueComponent } from '../add-employees/add-employees-di
 })
 
 export class DashboardComponent implements OnInit {
-
+  loginToken=localStorage.getItem('token')
   displayedColumns = ['id', 'name', 'email', 'gender', 'status', 'actions'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator, { static: true })
@@ -54,6 +54,10 @@ export class DashboardComponent implements OnInit {
       this.employeeService.changeList(values);    
       console.log("Implement delete functionality here");
     }
+  }
+  logout(){
+    localStorage.removeItem('token');
+    this.loginToken=null;
   }
 
 }

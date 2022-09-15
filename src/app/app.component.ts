@@ -16,15 +16,19 @@ export class AppComponent {
   @ViewChild("main") main: ElementRef | undefined;
   @ViewChild("footer") footer: ElementRef | undefined;
   title = 'preset-angular';
- 
+  loginToken:any;
 
   constructor(fb: FormBuilder) {
     
   }
 
   ngAfterViewInit(){
-
+    this.loginToken=localStorage.getItem('token');
     //this.main.height = 100 - (this.toolbar.height + this.footer.height)
+  }
+  logout(){
+    localStorage.removeItem('token');
+    this.loginToken=null;
   }
 }
 

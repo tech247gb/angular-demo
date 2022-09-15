@@ -11,11 +11,7 @@ export class EmployessService {
   currentEmployeeList = this.employeeListSource.asObservable();
 
   constructor(  private http: HttpClient) { }
-   headers = new Headers({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${environment.token}`
-  })
-
+/**get data list from api */
   getEmployees(): Promise<any> {
     return new Promise((resolve, reject) => {
       return this.http.get(environment.globalURL+'users').subscribe((response: any) => {
@@ -23,6 +19,7 @@ export class EmployessService {
       }, reject);
     });
   }
+  /**get one data  from api */
   getEmployee(id:any): Promise<any> {
     return new Promise((resolve, reject) => {
       return this.http.get(environment.globalURL+'users/'+id).subscribe((response: any) => {
@@ -30,6 +27,7 @@ export class EmployessService {
       }, reject);
     });
   }
+  /**add data to backend */
   addEmployee(data:any): Promise<any> {
     return new Promise((resolve, reject) => {
       return this.http.post(environment.globalURL+'users',data).subscribe((response: any) => {
@@ -37,6 +35,7 @@ export class EmployessService {
       }, reject);
     });
   }
+  /**Edit data and pass to backend */
   editEmployee(data:any,item:any): Promise<any> {
     return new Promise((resolve, reject) => {
       return this.http.put(environment.globalURL+'users/'+item.id,data).subscribe((response: any) => {
@@ -45,6 +44,7 @@ export class EmployessService {
       }, reject);
     });
   }
+  /**Delete data */
   deleteEmployee(item:any): Promise<any> {
     return new Promise((resolve, reject) => {
       return this.http.delete(environment.globalURL+'users/'+item.id).subscribe((response: any) => {
@@ -53,6 +53,7 @@ export class EmployessService {
       }, reject);
     });
   }
+  /**change data list without reload page */
   changeList(item:any) {
     this.employeeListSource.next(item);
   }

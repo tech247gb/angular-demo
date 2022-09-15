@@ -10,16 +10,20 @@ import {environment} from '../../../environments/environment';
 export class AuthService {
 
   constructor(  private http: HttpClient,) { }
+  /**Login api  */
   login(credential:any): Promise<any> {
+      return new Promise((resolve, reject) => {
+        return this.http.post( environment.authURL+'/user',credential).subscribe((response: any) => {         
+          resolve(response);   
+        }, reject)
+      });
+  }
+  /**Register */
+  register(form:any):Promise<any> {
     return new Promise((resolve, reject) => {
-      if(credential.username==='admin' && credential.password==='123456'){
-        resolve('success')
-      }else{
-        resolve('error')
-      }
-      // return this.http.post('', credential).subscribe((response: any) => {
-      //   resolve(response);
-      // }, reject);
+      return this.http.post( environment.authURL+'/user-add',form).subscribe((response: any) => {
+        resolve(response);
+      }, reject)
     });
   }
 }

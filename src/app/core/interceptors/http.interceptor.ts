@@ -14,7 +14,8 @@ export class HttpInterceptor implements HttpInterceptor {
       "Content-Type": "application/json",
       "Access-Control-Allow-Methods": "GET,POST,PATCH,DELETE,PUT,OPTIONS",
       "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, content-type, Authorization, authorization ",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "vary": "Accept-Encoding"
     })
   };
   constructor( ) { }

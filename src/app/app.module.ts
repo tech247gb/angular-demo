@@ -41,26 +41,23 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './common/header/header.component';
-import { SidenavComponent } from './common/sidenav/sidenav.component';
-import { FooterComponent } from './common/footer/footer.component';
+
 
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpInterceptor } from './core/interceptors/http.interceptor'; 
+import { LayoutModule } from './layout/layout.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SidenavComponent,
-    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     CdkTreeModule,
     MatAutocompleteModule,
     MatButtonModule,
@@ -97,6 +94,7 @@ import { HttpInterceptor } from './core/interceptors/http.interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LayoutModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

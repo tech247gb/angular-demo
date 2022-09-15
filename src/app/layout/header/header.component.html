@@ -1,0 +1,6 @@
+
+     <span class="nav-tool-items">
+      <a mat-button routerLink="/login" *ngIf="!loginToken"  routerLinkActive="active">Log in</a>
+      <a mat-button routerLink="/login" *ngIf="loginToken" (click)="logout()"  routerLinkActive="active">Logout</a>
+      <a mat-button mat-raised-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+    </span>

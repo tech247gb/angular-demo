@@ -1,23 +1,21 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>Log in</mat-card-title>
+        <mat-card-title>Register</mat-card-title>
       </mat-card-header>
-      <form class="example-form" [formGroup]="loginForm">
+      <form class="example-form" [formGroup]="registerForm">
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username" formControlName="username">
+            <input matInput placeholder="Username" formControlName="userName">
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Password" formControlName="password" type="password">
           </mat-form-field>
         </mat-card-content>
-        <button mat-stroked-button color="accent" (click)="login()" class="btn-block">Log in</button>
+        <button mat-stroked-button color="accent" (click)="register()" class="btn-block">Crate</button>
       </form>
-      <a  color="accent"  >
-        Dont have an account ? <span style="color: red;" routerLink="/auth/register">Register</span> 
+      <a  color="accent" >
+        Dont have an account ? <span style="color: red;" routerLink="/login">Login</span> 
       </a>
     </mat-card>
   </div>
-  <mat-progress-bar mode="buffer"></mat-progress-bar>
-

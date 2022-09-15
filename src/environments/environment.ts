@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   globalURL:'https://gorest.co.in/public/v2/',
-  authURL:"ttps://apimocha.com/angular-demo/auth/",
+  authURL:"https://6316d122cb0d40bc41440a88.mockapi.io/api/v1/",
   token:'5e1789caaff34469725356c4d9514474dc95538778d2bad51ae6fd4da30d72dc'	
 };
 

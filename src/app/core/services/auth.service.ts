@@ -13,7 +13,7 @@ export class AuthService {
   /**Login api  */
   login(credential:any): Promise<any> {
       return new Promise((resolve, reject) => {
-        return this.http.post( environment.authURL+'/user',credential).subscribe((response: any) => {         
+        return this.http.get( environment.authURL+'/authUser?userName='+credential.username).subscribe((response: any) => {         
           resolve(response);   
         }, reject)
       });
@@ -21,7 +21,7 @@ export class AuthService {
   /**Register */
   register(form:any):Promise<any> {
     return new Promise((resolve, reject) => {
-      return this.http.post( environment.authURL+'/user-add',form).subscribe((response: any) => {
+      return this.http.post( environment.authURL+'/authUser',form).subscribe((response: any) => {
         resolve(response);
       }, reject)
     });

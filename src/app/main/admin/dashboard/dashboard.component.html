@@ -2,7 +2,7 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav class="sw-sidenav">
     <mat-list>
-      <mat-list-item [routerLink]="['/login']"> Login</mat-list-item>
+      <mat-list-item [routerLink]="['/login']" (click)="logout()"> Logout</mat-list-item>
       <mat-list-item [routerLink]="['/admin/dashboard']"> Dashboard</mat-list-item>
     </mat-list>
   </mat-sidenav>

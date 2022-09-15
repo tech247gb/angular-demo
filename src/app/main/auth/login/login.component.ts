@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
   async login(){
     if(this.loginForm.valid){
         let loginres=await this.authService.login(this.loginForm.value);
-        if(loginres){
-          localStorage.setItem('token',loginres.token);
+        console.log(loginres);
+        if(loginres.length && loginres[0].token && loginres[0].password===this.loginForm.value['password']){
+          localStorage.setItem('token',loginres[0].token);
           this.router.navigate(["/admin/dashboard"]);
         }else{
-
+          
         }
     }
   }
